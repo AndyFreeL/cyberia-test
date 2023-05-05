@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styles from '../styles/Breadcrumbs.module.scss'
 import MainContainer from "../layouts/MainContainer";
 
-const Breadcrumbs: FC = ({breadcrumbs}) => {
+const Breadcrumbs: FC = ({breadcrumbs}:any) => {
     return (
         <MainContainer>
             <div className={styles.breadcrumbs}>

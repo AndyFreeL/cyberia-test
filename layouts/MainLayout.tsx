@@ -4,7 +4,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Breadcrumbs from "../components/Breadcrumbs";
 
-const MainLayout: FC = ({children, title, breadcrumbs}) => {
+interface MainProps{
+    children:any
+    title:any,
+    breadcrumbs:any
+}
+
+const MainLayout: FC = ({children, title, breadcrumbs}:MainProps) => {
     return (
         <>
             <Head>
