@@ -1,0 +1,67 @@
+@import "Button.module";
+
+.wrapper{
+  background: #252631;
+  @media screen and (max-width: 700px) {
+    margin-top: 200px;
+  }
+}
+
+.contact{
+  font-family: 'Open Sans', sans-serif;
+  color: #EFF3FF;
+  background: #252631;
+  display: flex;
+  padding-top: 95px;
+  padding-bottom: 170px;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  position: relative;
+  @media screen and (max-width: 1279px) {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 13px;
+    align-items: start;
+  }
+  &__text{
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 1279px) {
+      padding-bottom: 20px;
+    }
+    @media screen and (max-width: 700px) {
+      flex-direction: row;
+    }
+
+    &_image{
+      height: 144px;
+      width: 156px;
+      @media screen and (max-width: 700px) {
+        height: 76px;
+        width: 76px;
+      }
+    }
+    &_title{
+      padding: 14px 0 40px 0;
+      font-size: 38px;
+      line-height: 45px;
+      @media screen and (max-width: 700px) {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28px;
+        padding-left: 30px;
+      }
+    }
+    &_description{
+      font-size: 14px;
+      max-width: 580px;
+      @media screen and (max-width: 700px) {
+        display: none;
+        font-size: 13px;
+      }
+    }
+  }
+}

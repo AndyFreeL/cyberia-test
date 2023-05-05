@@ -1,0 +1,47 @@
+.filter__button{
+  color: #EEF3FF;
+  border-radius: 7px;
+  padding: 10px 29px;
+  background: #2B2D3A;
+  transition: background-color .3s, width .2s, font-size .2s, color .2s;
+  &:hover {
+    color: #303958;
+    background: #EEF3FF;
+  }
+  &:checked{
+    color:#FFFFFF;
+    background: #2D76F9;
+  }
+}
+.filter__checked{
+  color:#FFFFFF;
+  background: #2D76F9;
+}
+
+
+.send__button{
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+  transition: background-color .3s,width .2s,font-size .2s,color .2s;
+  background-color: #2d76f9;
+  border-radius: 35px;
+  color: #fff;
+  font-weight: 400;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  @media screen and (max-width: 1279px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 13px;
+    padding: 20px 20vw;
+    margin-bottom: 25px;
+  }
+
+  &:hover{
+    background-color: #0359F3;
+  }
+}
