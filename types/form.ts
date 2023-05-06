@@ -1,5 +1,5 @@
 export interface FormState{
-    formErrors:any[];
+    formErrors:any;
     loading:boolean;
     feedback:boolean;
 }

@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
-import MainContainer from "../layouts/MainContainer";
 import styles from '../styles/Footer.module.scss'
 import Logo from "./Logo";
 
 const Footer: FC = () => {
     return (
-        <MainContainer>
+        <div className={styles.container}>
             <div className={styles.footer}>
                 <div className={styles.footer__company}>
                     <div className={styles.footer__logo}><Logo/></div>
@@ -40,7 +39,7 @@ const Footer: FC = () => {
                     <p>Оферта оказания услуг</p>
                 </div>
             </div>
-        </MainContainer>
+        </div>
     );
 };
 

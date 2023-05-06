@@ -9,12 +9,12 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useForm} from "react-hook-form";
 
 
-// interface Values {
-//     email: string;
-//     phone: string;
-//     message: string;
-//     files: any[];
-// }
+interface Values {
+    email: string;
+    phone: string;
+    message: string;
+    files: any[];
+}
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -32,11 +32,12 @@ const ConnectForm: FC = () => {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
-    // const [feedbackStatus, setFeedbackStatus]:boolean = useState(false);
     const {fetchForm} = useActions()
 
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
+
+    console.log(formErrors)
 
     const sendForm=()=>{
         console.log(123)
@@ -44,19 +45,9 @@ const ConnectForm: FC = () => {
         fd.append('email', email)
         fd.append('phone', phone)
         fd.append('message', message)
-        fd.append('files', files)
+        fd.append('files', files as any)
         fetchForm(fd)
-
-
-
     }
-
-    const initialValues: Values = {
-        email: '',
-        phone: '',
-        message: '',
-        files:[]
-    };
 
     return (
         <form onSubmit={handleSubmit(sendForm)} className={`${styles.contact__form} ${styles.form}`}>
@@ -73,7 +64,7 @@ const ConnectForm: FC = () => {
                     className={`${styles.form__label} ${errors.email ? styles.form__label_error : ''}`}>
                     Email
                 </label>
-                <div className={styles.form__error}>{errors.email?.message}</div>
+                <div className={styles.form__error}>{errors.email?.message.toString()}</div>
             </div>
             <div className={styles.form__input}>
                 <InputMask
@@ -93,7 +84,7 @@ const ConnectForm: FC = () => {
 
             <div className={styles.textarea}>
                 <textarea className={`${styles.form__textarea_control} ${message && styles.active} `}
-                          name="message" id="message" cols="30" rows="10"
+                          name="message" id="message"
                           value={message} onChange={e => setMessage(e.target.value)}>
                         </textarea>
                 <label className={styles.form__label}>Сообщение</label>
@@ -115,7 +106,7 @@ const ConnectForm: FC = () => {
                     <img className={styles.form__img} src="/attach.svg" alt="attach"/>
                 </label>
                 <input type='file' id='file' className={styles.form__file} multiple
-                       onChange={(e) => setFiles(e.target.files)}/>
+                       onChange={(e:any) => setFiles(e.target.files)}/>
 
             </div>
 

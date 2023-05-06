@@ -1,7 +1,3 @@
-import MainContainer from "../layouts/MainContainer";
-import MainLayout from "../layouts/MainLayout";
-import Header from "../components/Header";
-
 const Error = () => {
     return (
 <>

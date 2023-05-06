@@ -1,16 +1,15 @@
-import React, {FC} from 'react';
+import React, {FC, ReactComponentElement, ReactNode} from 'react';
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Breadcrumbs from "../components/Breadcrumbs";
 
-interface MainProps{
-    children:any
-    title:any,
-    breadcrumbs:any
+
+interface MainLayoutProps{
+    title?:string,
+    children:  ReactNode
 }
 
-const MainLayout: FC = ({children, title, breadcrumbs}:MainProps) => {
+const MainLayout: FC<MainLayoutProps> = ({children, title}) => {
     return (
         <>
             <Head>
@@ -19,12 +18,6 @@ const MainLayout: FC = ({children, title, breadcrumbs}:MainProps) => {
 
             <div className='main-layout'>
                 <Header/>
-                <div className='breadcrumbs'></div>
-                {
-                    breadcrumbs ?
-                    <Breadcrumbs breadcrumbs={breadcrumbs}/>
-                    : <></>
-                }
                 {children}
                 <Footer/>
             </div>

@@ -6,7 +6,7 @@ import ConnectForm from "../components/ConnectForm";
 
 const Projects :FC= () => {
     return (
-        <MainLayout title={'Проекты'} breadcrumbs={'Проекты'}>
+        <MainLayout title={'Проекты'}>
             <ProjectsItems/>
            <Contact/>
         </MainLayout>

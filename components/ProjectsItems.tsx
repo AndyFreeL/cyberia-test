@@ -1,10 +1,9 @@
 import React, {FC, useEffect, useState} from 'react';
-import MainContainer from "../layouts/MainContainer";
 import styles from '../styles/ProjectsItems.module.scss'
 import ProjectCard from "./ProjectCard";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useAction";
-import projects from "../pages/projects";
+import Breadcrumbs from "./Breadcrumbs";
 
 
 const ProjectsItems: FC = () => {
@@ -31,11 +30,10 @@ const ProjectsItems: FC = () => {
     }
 
 
-
     return (
-        <MainContainer>
+        <div className={styles.container}>
+            <Breadcrumbs breadcrumbs='Проекты'/>
             <div className={styles.filter}>
-
                 {filters.map(filter =>
                     <span key={filter.id} onClick={()=>choseFilter(filter.id)}
                           className={`${styles.filter__item} ${styles.filter__button}
@@ -56,7 +54,7 @@ const ProjectsItems: FC = () => {
                 }
 
             </div>
-        </MainContainer>
+        </div>
     );
 };
 
