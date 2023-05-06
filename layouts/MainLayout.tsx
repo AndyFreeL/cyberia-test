@@ -28,9 +28,6 @@ const MainLayout: FC<MainLayoutProps> = ({children, title}) => {
                     display: flex;
                     flex-direction: column;
                   }
-                  .breadcrumbs{
-                  //padding: 180px 0 0 0;
-                  }
                 `}
             </style>
         </>

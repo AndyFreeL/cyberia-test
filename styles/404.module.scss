@@ -1,0 +1,18 @@
+@import "Button.module";
+
+.notfound{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height: 100vh;
+  &__img{
+    padding-bottom: 58px;
+    @media screen and (max-width: 700px) {
+      width: 300px;
+    }
+  }
+  &__title{
+    padding-bottom: 58px;
+  }
+}

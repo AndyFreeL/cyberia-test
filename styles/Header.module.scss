@@ -10,6 +10,7 @@
   @media screen and (max-width: 1279px) {
     top: 24px;
   }
+  z-index: 12;
 }
 
 .menu {
@@ -112,8 +113,8 @@
   display: none;
   position: absolute;
   right: 15vw;
-  top: 15px;
-  width: 24px;
+  top: 3px;
+  padding: 10px 0;
   @media screen and (max-width: 1279px) {
     display: flex;
   }
@@ -148,11 +149,9 @@
 }
 
 .open {
-
   .burger__container {
     //top: 72px;
   }
-
   .burger__button {
     background: none;
     transform: translateX(-3px);
@@ -171,6 +170,7 @@
   }
 
   .menu {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -249,4 +249,3 @@
     }
   }
 }
-

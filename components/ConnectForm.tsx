@@ -37,8 +37,6 @@ const ConnectForm: FC = () => {
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
 
-    console.log(formErrors)
-
     const sendForm=()=>{
         console.log(123)
         const fd = new FormData()
@@ -50,7 +48,7 @@ const ConnectForm: FC = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(sendForm)} className={`${styles.contact__form} ${styles.form}`}>
+        <form onSubmit={handleSubmit(sendForm)} className={`${styles.form}`}>
             <div className={styles.form__input}>
                 <input
                     className={`${styles.form__control} ${errors.email ? styles.form__control_error : ''} ${email?styles.active:''}`}

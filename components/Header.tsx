@@ -21,6 +21,16 @@ const Header: FC = () => {
         }
     }, [])
 
+
+    useEffect(() => {
+        const html = document.querySelector("html");
+        if (html) {
+            html.style.overflow = open ? "hidden" : "auto";
+        }
+    }, [open]);
+
+
+
     return (
         <div className={styles.container}>
             <div className={`${styles.header} ${show && styles.hidden} ${open && styles.open}`}>
@@ -44,9 +54,9 @@ const Header: FC = () => {
                     </ul>
 
                 </div>
-                <label onClick={() => setOpen(!open)} className={`${styles.burger__container} ${open && styles.open}`}>
+                <div onClick={() => setOpen(!open)} className={`${styles.burger__container} ${open && styles.open}`}>
                     <div className={styles.burger__button}></div>
-                </label>
+                </div>
             </div>
         </div>
 
